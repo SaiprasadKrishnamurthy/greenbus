@@ -1,0 +1,156 @@
+{
+  "_embedded": {
+    "busRouteList": [
+      {
+        "busId": 1,
+        "busNo": "19A",
+        "busType": "VolvoAC",
+        "origin": "okkiyam",
+        "destination": "tidel",
+        "startingPoint": "sholinganallur",
+        "endingPoint": "adyar",
+        "totalDistanceInKm": 38,
+        "totalTimeInMinutes": 51,
+        "totalFare": 40,
+        "routes": [
+          {
+            "id": 1,
+            "busId": 1,
+            "busNo": "19A",
+            "origin": "sholinganallur",
+            "destination": "ptc",
+            "timeatorigin": 700,
+            "legSeqNo": 1,
+            "maxTravelTimeMinutes": 10,
+            "distanceInKm": 5,
+            "stageSeqId": 1,
+            "busType": "VolvoAC",
+            "disabled": false
+          },
+          {
+            "id": 2,
+            "busId": 1,
+            "busNo": "19A",
+            "origin": "ptc",
+            "destination": "okkiyam",
+            "timeatorigin": 710,
+            "legSeqNo": 2,
+            "maxTravelTimeMinutes": 5,
+            "distanceInKm": 2,
+            "stageSeqId": 1,
+            "busType": "VolvoAC",
+            "disabled": false
+          },
+          {
+            "id": 3,
+            "busId": 1,
+            "busNo": "19A",
+            "origin": "okkiyam",
+            "destination": "thoraipakkam",
+            "timeatorigin": 720,
+            "legSeqNo": 3,
+            "maxTravelTimeMinutes": 5,
+            "distanceInKm": 2,
+            "stageSeqId": 1,
+            "busType": "VolvoAC",
+            "disabled": false
+          },
+          {
+            "id": 5,
+            "busId": 1,
+            "busNo": "19A",
+            "origin": "thoraipakkam",
+            "destination": "perungudi",
+            "timeatorigin": 725,
+            "legSeqNo": 4,
+            "maxTravelTimeMinutes": 6,
+            "distanceInKm": 5,
+            "stageSeqId": 1,
+            "busType": "VolvoAC",
+            "disabled": false
+          },
+          {
+            "id": 6,
+            "busId": 1,
+            "busNo": "19A",
+            "origin": "perungudi",
+            "destination": "kandanchavadi",
+            "timeatorigin": 735,
+            "legSeqNo": 5,
+            "maxTravelTimeMinutes": 3,
+            "distanceInKm": 2,
+            "stageSeqId": 1,
+            "busType": "VolvoAC",
+            "disabled": false
+          },
+          {
+            "id": 7,
+            "busId": 1,
+            "busNo": "19A",
+            "origin": "kandanchavadi",
+            "destination": "srp",
+            "timeatorigin": 741,
+            "legSeqNo": 6,
+            "maxTravelTimeMinutes": 6,
+            "distanceInKm": 4,
+            "stageSeqId": 2,
+            "busType": "VolvoAC",
+            "disabled": false
+          },
+          {
+            "id": 8,
+            "busId": 1,
+            "busNo": "19A",
+            "origin": "srp",
+            "destination": "tidel",
+            "timeatorigin": 749,
+            "legSeqNo": 7,
+            "maxTravelTimeMinutes": 7,
+            "distanceInKm": 7,
+            "stageSeqId": 2,
+            "busType": "VolvoAC",
+            "disabled": false
+          },
+          {
+            "id": 9,
+            "busId": 1,
+            "busNo": "19A",
+            "origin": "tidel",
+            "destination": "indranagar",
+            "timeatorigin": 755,
+            "legSeqNo": 8,
+            "maxTravelTimeMinutes": 4,
+            "distanceInKm": 3,
+            "stageSeqId": 2,
+            "busType": "VolvoAC",
+            "disabled": false
+          },
+          {
+            "id": 10,
+            "busId": 1,
+            "busNo": "19A",
+            "origin": "indranagar",
+            "destination": "adyar",
+            "timeatorigin": 801,
+            "legSeqNo": 9,
+            "maxTravelTimeMinutes": 5,
+            "distanceInKm": 8,
+            "stageSeqId": 2,
+            "busType": "VolvoAC",
+            "disabled": false
+          }
+        ],
+        "_links": {
+          "self": {
+            "href": "http://localhost:58197/busroute/okkiyam/tidel/1"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "http://localhost:58197/busroutes/okkiyam/tidel"
+    }
+  }
+}
