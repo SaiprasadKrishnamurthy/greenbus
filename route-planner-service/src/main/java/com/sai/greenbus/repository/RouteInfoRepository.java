@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -61,8 +62,14 @@ public class RouteInfoRepository {
                 .where(qRouteInfo.busId.eq(busId))
                 .fetch();
 
-        return routes.stream()
-                .filter(routeInfo -> routeInfo.getDestination().equalsIgnoreCase(destination.trim()) || routeInfo.getOrigin().equalsIgnoreCase(origin.trim()))
-                .count() == 2;
+        Optional<RouteInfo> originRoute = routes.stream()
+                .filter(routeInfo -> routeInfo.getOrigin().equalsIgnoreCase(origin.trim()))
+                .findFirst();
+
+        Optional<RouteInfo> destinationRoute = routes.stream()
+                .filter(routeInfo -> routeInfo.getDestination().equalsIgnoreCase(destination.trim()))
+                .findFirst();
+
+        return originRoute.isPresent() && destinationRoute.isPresent() && (originRoute.get().getLegSeqNo() - destinationRoute.get().getLegSeqNo() <= 0);
     }
 }

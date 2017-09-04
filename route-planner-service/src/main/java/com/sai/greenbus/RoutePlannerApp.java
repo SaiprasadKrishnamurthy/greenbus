@@ -1,5 +1,6 @@
 package com.sai.greenbus;
 
+import com.google.common.base.Predicates;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.spring.cache.HazelcastCacheManager;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -20,6 +21,13 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.client.RestTemplate;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.persistence.EntityManager;
@@ -71,6 +79,30 @@ public class RoutePlannerApp {
             System.out.println(br);
             System.out.println(" ------------------ ");
         };
+    }
+
+    /**
+     * Swagger 2 docket bean configuration.
+     *
+     * @return swagger 2 Docket.
+     */
+    @Bean
+    public Docket configApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("config")
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(Predicates.not(PathSelectors.regex("/error"))) // Exclude Spring error controllers
+                .build();
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("Greenbus Routeplanner API")
+                .contact(new Contact("sai kris", "", "sai@concordesearch.co.uk"))
+                .version("1.0")
+                .build();
     }
 
     public static void main(String[] args) {
