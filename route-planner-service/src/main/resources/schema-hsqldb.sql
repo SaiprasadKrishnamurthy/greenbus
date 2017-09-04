@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS route_info(
   ,busNo     VARCHAR(30)
   ,origin      VARCHAR(100)
   ,destination      VARCHAR(100)
-  ,timeatorigin      INTEGER NOT NULL
+  ,frequencyinminutes      INTEGER NOT NULL
   ,legSeqNo      INTEGER NOT NULL
   ,maxTravelTimeMinutes      INTEGER NOT NULL
   ,distanceInKm      INTEGER NOT NULL

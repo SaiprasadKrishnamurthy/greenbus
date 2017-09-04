@@ -24,9 +24,12 @@ public class BusRoute extends ResourceSupport implements Serializable {
 
     private double totalDistanceInKm;
     private double totalTimeInMinutes;
+    private double frequencyInMinutes;
     private double totalFare;
 
-    private List<RouteInfo> routes;
+    private List<RouteInfo> journey;
+
+    private List<RouteInfo> fullRoute;
 
     public Integer getBusId() {
         return busId;
@@ -108,11 +111,27 @@ public class BusRoute extends ResourceSupport implements Serializable {
         this.totalFare = totalFare;
     }
 
-    public List<RouteInfo> getRoutes() {
-        return routes;
+    public double getFrequencyInMinutes() {
+        return frequencyInMinutes;
     }
 
-    public void setRoutes(List<RouteInfo> routes) {
-        this.routes = routes;
+    public void setFrequencyInMinutes(double frequencyInMinutes) {
+        this.frequencyInMinutes = frequencyInMinutes;
+    }
+
+    public List<RouteInfo> getJourney() {
+        return journey;
+    }
+
+    public void setJourney(List<RouteInfo> journey) {
+        this.journey = journey;
+    }
+
+    public List<RouteInfo> getFullRoute() {
+        return fullRoute;
+    }
+
+    public void setFullRoute(List<RouteInfo> fullRoute) {
+        this.fullRoute = fullRoute;
     }
 }

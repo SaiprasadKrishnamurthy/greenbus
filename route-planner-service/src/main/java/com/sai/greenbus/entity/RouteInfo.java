@@ -27,7 +27,7 @@ public class RouteInfo implements Serializable {
     private String destination;
 
     @Column
-    private Integer timeatorigin;
+    private Integer frequencyinminutes;
 
     @Column(name = "legseqno")
     private Integer legSeqNo;
@@ -87,14 +87,6 @@ public class RouteInfo implements Serializable {
         this.destination = destination;
     }
 
-    public Integer getTimeatorigin() {
-        return timeatorigin;
-    }
-
-    public void setTimeatorigin(Integer timeatorigin) {
-        this.timeatorigin = timeatorigin;
-    }
-
     public Integer getLegSeqNo() {
         return legSeqNo;
     }
@@ -141,5 +133,13 @@ public class RouteInfo implements Serializable {
 
     public void setDisabled(boolean disabled) {
         this.disabled = disabled;
+    }
+
+    public Integer getFrequencyinminutes() {
+        return frequencyinminutes;
+    }
+
+    public void setFrequencyinminutes(Integer frequencyinminutes) {
+        this.frequencyinminutes = frequencyinminutes;
     }
 }

@@ -26,10 +26,10 @@ public class StagePricingRepository {
 
     public StagePricing findStagePricing(final String busType) {
         QStagePricing qStagePricing = QStagePricing.stagePricing;
+        System.out.println(jpaQueryFactory.selectFrom(qStagePricing).fetchAll().fetch());
         return jpaQueryFactory
-                .from(qStagePricing)
-                .select(qStagePricing)
-                .where(qStagePricing.busType.eq(qStagePricing.busType))
+                .selectFrom(qStagePricing)
+                .where(qStagePricing.busType.eq(busType))
                 .fetchOne();
     }
 

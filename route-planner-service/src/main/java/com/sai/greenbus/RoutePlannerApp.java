@@ -67,10 +67,9 @@ public class RoutePlannerApp {
         return (args) -> {
             System.out.println(routeInfoService);
             System.out.println("\n\n\n");
-            List<BusRoute> br = routeInfoService.findRoutes("okkiyam", "srp");
+            List<BusRoute> br = routeInfoService.findRoutes("Periyar Bridge", "Guindy Kathipara Junction");
             System.out.println(br);
             System.out.println(" ------------------ ");
-            routeInfoService.findRoutes("okkiyam", "srp");
         };
     }
 
