@@ -888,3 +888,163 @@ VALUES
 
 INSERT INTO stage_pricing(id,busType,farePerStage) VALUES (1, 'AC Volvo', 10);
 INSERT INTO stage_pricing(id,busType,farePerStage) VALUES (2, 'Deluxe', 2);
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    1, 'High Court', 'Chennai', '', '', 
+    ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (2, 'Central', 'Chennai', '', '', '');
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    3, 'Periyar Bridge', 'Chennai', '', 
+    '', ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (4, 'T.V.S', 'Chennai', '', '', '');
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (5, 'D.M.S', 'Chennai', '', '', '');
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (6, 'S.H.B', 'Chennai', '', '', '');
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    7, 'Saidapet', 'Chennai', '', '', ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    8, 'Concorde Bus Stand', 'Chennai', 
+    '', '', ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    9, 'Guindy Railway Station', 'Chennai', 
+    '', '', ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    10, 'Guindy Kathipara Junction', 
+    'Chennai', '', '', ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    11, 'Butt Road', 'Chennai', '', '', 
+    ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    12, 'Nandhambakkam', 'Chennai', '', 
+    '', ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    13, 'Ramapuram', 'Chennai', '', '', 
+    ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (14, 'DLF', 'Chennai', '', '', '');
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    15, 'Mugalivakkam', 'Chennai', '', 
+    '', ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (16, 'Porur', 'Chennai', '', '', '');
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    17, 'S.R.M.C', 'Chennai', '', '', ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    18, 'Iyyappanthangal', 'Chennai', 
+    '', '', ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    19, 'Kumananchavadi', 'Chennai', '', 
+    '', ''
+  );
+
+INSERT INTO bus_stop(
+  id, name, city, pincode, landmark, latlong
+) 
+VALUES 
+  (
+    20, 'Poonamallee', 'Chennai', '', '', 
+    ''
+  );

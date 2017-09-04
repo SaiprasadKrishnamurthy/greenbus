@@ -39,6 +39,21 @@ public class RouteInfoRepository {
                 .collect(Collectors.toList());
     }
 
+    public List<List<RouteInfo>> findRoutes(final String busNo) {
+        QRouteInfo qRouteInfo = QRouteInfo.routeInfo;
+
+        List<Integer> buses = jpaQueryFactory
+                .selectFrom(qRouteInfo)
+                .select(qRouteInfo.busId)
+                .where(qRouteInfo.busNo.equalsIgnoreCase(busNo.trim()))
+                .distinct()
+                .fetch();
+
+        return buses.stream()
+                .map(bus -> jpaQueryFactory.selectFrom(qRouteInfo).where(qRouteInfo.busId.eq(bus)).orderBy(qRouteInfo.legSeqNo.asc()).fetch())
+                .collect(Collectors.toList());
+    }
+
 
     public boolean isValidBusForRoute(final String origin, final String destination, final Integer busId) {
         QRouteInfo qRouteInfo = QRouteInfo.routeInfo;

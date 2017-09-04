@@ -40,6 +40,14 @@ public class RouteInfoService {
                 .collect(Collectors.toList());
     }
 
+    @Cacheable(cacheNames = "routeDetailsCache", key = "#p0.concat('routeDetailsCache')")
+    public List<BusRoute> findRouteDetails(final String busNo) {
+        List<List<RouteInfo>> routesPerBus = routeInfoRepository.findRoutes(busNo);
+        return routesPerBus.stream()
+                .map(routes -> buildBusRoute(routes.get(0).getOrigin(), routes.get(routes.size() - 1).getDestination(), routes, routes))
+                .collect(Collectors.toList());
+    }
+
     public Optional<BusRoute> findRoute(final String origin, final String destination, final int busId) {
         return findRoutes(origin.trim(), destination.trim()).stream()
                 .filter(busRoute -> busRoute.getBusId() == busId)

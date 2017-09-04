@@ -47,6 +47,13 @@ public class BusRouteApi {
         busroutes.forEach(busRoute -> {
             busRoute.add(linkTo(methodOn(BusRouteApi.class).busRoute(origin.trim(), destination.trim(), busRoute.getBusId())).withSelfRel());
             busRoute.add(linkTo(methodOn(BusRouteApi.class).busRouteValidity(origin.trim(), destination.trim(), busRoute.getBusId())).withRel("validBusForRoute"));
+            busRoute.add(linkTo(methodOn(BusRouteApi.class).busRoute(busRoute.getBusNo().trim())).withRel("busRouteDetails"));
+        });
+    }
+
+    private void buildLinks(final String busNo, final List<BusRoute> busroutes) {
+        busroutes.forEach(busRoute -> {
+            busRoute.add(linkTo(methodOn(BusRouteApi.class).busRoute(busNo.trim())).withSelfRel());
         });
     }
 
@@ -56,6 +63,19 @@ public class BusRouteApi {
         if (busroute.isPresent()) {
             Resource<BusRoute> resource = new Resource<>(busroute.get());
             resource.add(linkTo(methodOn(BusRouteApi.class).busRoute(origin.trim(), destination.trim(), busId)).withSelfRel());
+            return new ResponseEntity<>(resource, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("busroute/busNo/{busNo}")
+    public ResponseEntity<Resources<BusRoute>> busRoute(final @PathVariable("busNo") String busName) {
+        List<BusRoute> busroute = routeInfoService.findRouteDetails(busName.trim());
+        if (!busroute.isEmpty()) {
+            // build the HAL links per bus route.
+            buildLinks(busName, busroute);
+            Resources<BusRoute> resource = new Resources<>(busroute, linkTo(methodOn(BusRouteApi.class).busRoute(busName.trim())).withSelfRel());
             return new ResponseEntity<>(resource, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
